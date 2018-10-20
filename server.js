@@ -15,6 +15,9 @@ const { BlogPosts } = require("./models");
 const app = express();
 app.use(express.json());
 
+app.use(express.static('public'));
+
+
 // GET requests to /blog-posts => return 10 blog posts
 app.get("/blog-posts", (req, res) => {
     BlogPosts.find()
